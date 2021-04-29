@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package interface;
+
+service Greeter {
+  rpc MkdirProject (MkdirRequest) returns (Reply) {}
+  rpc UploadFile (UploadRequest) returns (Reply) {}
+  rpc CompileProject (CompileRequest) returns (Reply) {}
+  rpc ShellCommand (ShellCommandRequest) returns (Reply) {}
+}
+
+message MkdirRequest {
+  string name = 1;
+}
+
+message UploadRequest {
+  string file = 1;
+}
+
+message CompileRequest {
+  string client = 1 ;
+}
+
+message ShellCommandRequest {
+  string command = 1;
+}
+
+message Reply {
+  string message = 1;
+}
+
